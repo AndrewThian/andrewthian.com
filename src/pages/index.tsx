@@ -1,6 +1,7 @@
 import * as React from 'react';
-import { createGlobalStyle } from "styled-components";
-import * as Container from "../components/container";
+import styled, { createGlobalStyle } from "styled-components";
+import * as Container from "../components/Containers";
+import * as Content from "../components/blocks/introduction"
 
 const GlobalStyle = createGlobalStyle`
     body {
@@ -17,7 +18,9 @@ export default class IndexPage extends React.Component<IndexPageProps, {}> {
             <React.Fragment>
                 <GlobalStyle />
                 <Container.Main>
-                    hi
+                    <Content.Introduction>
+                        HI
+                    </Content.Introduction>
                 </Container.Main>
             </React.Fragment>
         )
