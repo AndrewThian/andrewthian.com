@@ -82,7 +82,7 @@ class Counter extends React.Component<{}, StateType> {
         const elapsedTime = this.parseSeconds(totalSeconds)
         return (
             <div>
-                <p>elapsed time: {elapsedTime}</p>
+                <p>elapsed: {elapsedTime}</p>
             </div>
             
         )
