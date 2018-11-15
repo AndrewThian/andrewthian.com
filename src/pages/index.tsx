@@ -106,7 +106,7 @@ export default class IndexPage extends React.Component<IndexPageProps, {}> {
                         </StyledIntro.Header>
                         <StyledIntro.Content>
                             <p>
-                                I know, it's just a blank page at this point. Well, it's under construction. I know, it's a bummer. Who likes construction pages anyway? It's always "We'll be right back" or "Ah, coming to you soon".
+                                I know, it's just a blank page at this point. Well, it's under construction. I know, it's a bummer. Who likes construction pages anyway? It's always "We'll be right back" or "Ah, coming to you soon". But not this page!!
                             </p>
                             <p>
                                 Since you're already here, you must be looking to know more about Andrew. Well, here's his <Link type="linkedin" target="blank" href={linkedIn}>linkedin</Link> and <Link type="github" target="blank" href={github}>github</Link>.
