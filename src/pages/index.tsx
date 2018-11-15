@@ -14,6 +14,8 @@ const getColor = (linkType: string): string => {
         return "#6cc644"
     } else if (linkType === "behance") {
         return "#053eff"
+    } else if (linkType === "buuuk") {
+        return "#053eff"
     } else {
         return "salmon"
     }
@@ -36,6 +38,7 @@ const linkedIn = "https://www.linkedin.com/in/andrewthian"
 const github = "https://github.com/AndrewThian"
 const behance = "https://www.behance.net/andrewbobb284f"
 const hackathon = "https://engineers.sg/video/butt-js-super-silly-hackathon--2179"
+const buuuk = "https://buuuk.com/blog/something-new-logo/"
 
 interface StateType {
     counter: number
@@ -112,7 +115,9 @@ export default class IndexPage extends React.Component<IndexPageProps, {}> {
                                 Since you're already here, you must be looking to know more about Andrew. Well, here's his <Link type="linkedin" target="blank" href={linkedIn}>linkedin</Link> and <Link type="github" target="blank" href={github}>github</Link>.
                             </p>
                             <p>
-                                Perhaps, you're a more artistic type? Maybe you could checkout his <Link type="behance" target="blank" href={behance}>behance</Link> or maybe you're just in for laugh and don't really know why you're here, why not check out his ridiculous project for a <Link target="blank" href={hackathon}>hackathon</Link>.
+                                Perhaps, you're a more artistic type? Maybe you could checkout his <Link type="behance" target="blank" href={behance}>behance</Link> or an article about a logo he <Link type="buuuk" target="blank" href={buuuk}>designed</Link>?</p>
+                            <p>
+                                maybe you're just in for laugh and don't really know why you're here, why not check out his ridiculous project for a <Link target="blank" href={hackathon}>hackathon</Link>.
                             </p>
                             <p>
                                 Whatever it is, here's his email address: 
