@@ -70,7 +70,7 @@ class Counter extends React.Component<{}, StateType> {
         let minutes = Math.floor(totalSeconds / 60)
         let seconds = totalSeconds % 60
 
-        return `${hours}:${minutes}:${seconds}`
+        return `${hours} hour(s) : ${minutes} minutes(s) : ${seconds} seconds(s)`
     }
 
     render () {
