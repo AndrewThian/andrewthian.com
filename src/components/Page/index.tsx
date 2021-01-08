@@ -1,4 +1,5 @@
 import { FC, ReactElement } from 'react'
+import Header from '~/components/Header'
 
 type PageProps = {
   children: React.ReactNode
@@ -7,7 +8,7 @@ type PageProps = {
 const Page: FC<PageProps> = ({ children }): ReactElement => {
   return (
     <>
-      <header>header</header>
+      <Header />
       {children}
       <footer>footer</footer>
     </>
