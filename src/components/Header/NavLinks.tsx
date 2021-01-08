@@ -18,6 +18,7 @@ const Label = styled.span<LabelProps>`
 
   :hover {
     background-color: red;
+    cursor: pointer;
   }
 `
 
