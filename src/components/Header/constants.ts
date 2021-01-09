@@ -12,7 +12,25 @@ const linksMapping: IlinksMapping = {
   design: 'Splashes of paint',
 }
 
+const activeLink = (path: string): string => {
+  if (path === '/') return 'home'
+  if (path === '/about') return 'about'
+  if (path.includes('writing')) return 'writing'
+  if (path.includes('design')) return 'design'
+
+  return 'home'
+}
+
+const activePath = (link: string): string => {
+  if (link === 'home') return '/'
+  if (link === 'about') return '/about'
+  if (link === 'writing') return '/writing'
+  if (link === 'design') return '/design'
+
+  return '/'
+}
+
 const numOfLinks = Object.keys(linksMapping).length
 
-export { linksMapping, numOfLinks }
+export { linksMapping, numOfLinks, activeLink, activePath }
 export type { IlinksMapping }
