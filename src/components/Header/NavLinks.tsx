@@ -3,16 +3,17 @@ import styled from 'styled-components'
 import Link from 'next/link'
 import { useRouter } from 'next/dist/client/router'
 
-import { linksMapping, IlinksMapping } from './constants'
+import { linksMapping, IlinksMapping, activePath } from './constants'
 
-type LabelProps = {
+type StyledLinkProps = {
   readonly isActive: boolean
 }
 
-const Label = styled.span<LabelProps>`
+const StyledLink = styled.a<StyledLinkProps>`
+  text-decoration: none;
+  white-space: nowrap;
   display: block;
-  padding: 1em 2em;
-  width: min-content;
+  padding: 1em;
   border-radius: 4px;
   background-color: ${(props) => (props.isActive ? 'red' : '')};
 
@@ -20,11 +21,11 @@ const Label = styled.span<LabelProps>`
     background-color: red;
     cursor: pointer;
   }
-`
 
-const StyledLink = styled.a`
-  text-decoration: none;
-  white-space: nowrap;
+  @media (min-width: 768px) {
+    padding: 1em 2em;
+    width: min-content;
+  }
 `
 
 const NavLinks: FC = () => {
@@ -33,15 +34,13 @@ const NavLinks: FC = () => {
     <>
       {Object.keys(linksMapping)
         .map((link) => ({
-          path: `/${link !== 'home' ? link : ''}`,
+          path: activePath(link),
           label: linksMapping[link as keyof IlinksMapping],
         }))
         .map(({ path, label }) => (
-          <Label key={path} isActive={router.pathname === path}>
-            <Link href={path} passHref>
-              <StyledLink>{label}</StyledLink>
-            </Link>
-          </Label>
+          <Link key={path} href={path} passHref>
+            <StyledLink isActive={router.pathname === path}>{label}</StyledLink>
+          </Link>
         ))}
     </>
   )
