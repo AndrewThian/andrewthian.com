@@ -1,15 +1,20 @@
 import { NextRouter, useRouter } from 'next/dist/client/router'
-import { activeLink } from './constants'
+import { activeLink, activePath } from './constants'
 
-type useActiveLinkType = {
+type useActiveURLType = {
   router: NextRouter
   activeLink: string
+  activePath: string
 }
 
-const useActiveLink = (): useActiveLinkType => {
+const useActiveURL = (): useActiveURLType => {
   const router = useRouter()
 
-  return { router, activeLink: activeLink(router.pathname) }
+  return {
+    router,
+    activeLink: activeLink(router.pathname),
+    activePath: activePath(activeLink(router.pathname)),
+  }
 }
 
-export { useActiveLink }
+export { useActiveURL }

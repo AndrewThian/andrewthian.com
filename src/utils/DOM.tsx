@@ -12,4 +12,10 @@ const off = (
   options?: boolean | AddEventListenerOptions | undefined
 ): void => target.removeEventListener(eventName, listener, options)
 
-export { on, off }
+const classSelector = (el: HTMLElement): string =>
+  el.className
+    .split(' ')
+    .map((s) => `.${s}`)
+    .join('')
+
+export { on, off, classSelector }
