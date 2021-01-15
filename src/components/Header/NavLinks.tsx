@@ -1,9 +1,9 @@
 import { FC } from 'react'
 import styled from 'styled-components'
 import Link from 'next/link'
-import { useRouter } from 'next/dist/client/router'
 
 import { linksMapping, IlinksMapping, activePath } from './constants'
+import { useActiveURL } from './hooks'
 
 type StyledLinkProps = {
   readonly isActive: boolean
@@ -29,7 +29,7 @@ const StyledLink = styled.a<StyledLinkProps>`
 `
 
 const NavLinks: FC = () => {
-  const router = useRouter()
+  const { activePath: currentActivePath } = useActiveURL()
   return (
     <>
       {Object.keys(linksMapping)
@@ -39,7 +39,7 @@ const NavLinks: FC = () => {
         }))
         .map(({ path, label }) => (
           <Link key={path} href={path} passHref>
-            <StyledLink isActive={router.pathname === path}>{label}</StyledLink>
+            <StyledLink isActive={currentActivePath === path}>{label}</StyledLink>
           </Link>
         ))}
     </>

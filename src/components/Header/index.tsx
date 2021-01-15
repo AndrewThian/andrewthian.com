@@ -6,6 +6,14 @@ import { numOfLinks } from './constants'
 
 const baseStyles = css`
   padding: 4px;
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  font-weight: bold;
+  background-color: white;
+
+  box-shadow: rgba(0, 0, 0, 0.06) 0px 1px 0px;
 `
 
 const MobileContainer = styled.nav`

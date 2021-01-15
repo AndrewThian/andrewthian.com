@@ -1,4 +1,12 @@
-import Document, { DocumentContext, DocumentInitialProps } from 'next/document'
+import Document, {
+  DocumentContext,
+  DocumentInitialProps,
+  Head,
+  Html,
+  Main,
+  NextScript,
+} from 'next/document'
+import { ReactElement } from 'react'
 import { ServerStyleSheet } from 'styled-components'
 
 export default class MyDocument extends Document {
@@ -25,5 +33,20 @@ export default class MyDocument extends Document {
     } finally {
       sheet.seal()
     }
+  }
+
+  render(): ReactElement {
+    return (
+      <Html>
+        <Head>
+          <link rel="preload" href="/fonts/Lato-Regular.ttf" as="font" crossOrigin="" />
+          <link rel="preload" href="/fonts/Lato-Bold.ttf" as="font" crossOrigin="" />
+        </Head>
+        <body>
+          <Main />
+          <NextScript />
+        </body>
+      </Html>
+    )
   }
 }

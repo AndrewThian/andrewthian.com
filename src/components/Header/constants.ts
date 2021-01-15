@@ -8,8 +8,8 @@ interface IlinksMapping {
 const linksMapping: IlinksMapping = {
   home: 'Home',
   about: 'About',
-  writing: 'Tech Ramblings',
-  design: 'Splashes of paint',
+  writing: 'Writing',
+  design: 'Design',
 }
 
 const activeLink = (path: string): string => {
