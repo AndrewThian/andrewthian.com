@@ -10,7 +10,6 @@ const baseStyles = css`
   position: fixed;
   top: 0px;
   left: 0px;
-  font-size: 14px;
   font-weight: bold;
   background-color: white;
 
